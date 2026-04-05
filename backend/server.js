@@ -5,7 +5,7 @@ const cors = require("cors");
 
 app.use(express.json()) // lets Express read JSON request bodies
 app.use(express.urlencoded({ extended: true })) // lets Express read form data
-app.use(cors());
+app.use(cors({origin:'*'}));
 
 connectDb();
 
