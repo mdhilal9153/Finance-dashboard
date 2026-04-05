@@ -4,6 +4,10 @@ A role-based finance dashboard system built as part of a backend engineering ass
 
 ---
 
+## Live Demo
+- Frontend: https://your-vercel-url.vercel.app
+- Backend API: https://finance-dashboard-1zfe.onrender.com
+
 ## Tech Stack
 
 - **Backend:** Node.js, Express.js
