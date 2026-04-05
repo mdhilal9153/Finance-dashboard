@@ -13,7 +13,7 @@ const AddRecord = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:8080/api/records/create', form, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/records/create`, form, {
         headers: { Authorization: `Bearer ${token}` }
       })
       navigate('/records')

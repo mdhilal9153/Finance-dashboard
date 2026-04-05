@@ -10,7 +10,7 @@ const Users = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/admin/users', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/users`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setUsers(response.data)
@@ -21,7 +21,7 @@ const Users = () => {
 
   const handleToggle = async (userId) => {
     try {
-      const response = await axios.put(`http://localhost:8080/api/admin/deactivate/${userId}`, {}, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/admin/deactivate/${userId}`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       })
       if(response.status === 200) {

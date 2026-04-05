@@ -19,17 +19,17 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const summaryRes = await axios.get('http://localhost:8080/api/dashboard/summary', {
+        const summaryRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/dashboard/summary`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setSummaryData(summaryRes.data)
 
-        const recentRes = await axios.get('http://localhost:8080/api/dashboard/recent', {
+        const recentRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/dashboard/recent`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setRecentTransactions(recentRes.data)
 
-        const categoriesRes = await axios.get('http://localhost:8080/api/dashboard/categories', {
+        const categoriesRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/dashboard/categories`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setCategories(categoriesRes.data)

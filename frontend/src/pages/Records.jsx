@@ -12,7 +12,7 @@ const Records = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const allrecords = await axios.get('http://localhost:8080/api/records/allrecords', {
+        const allrecords = await axios.get(`${import.meta.env.VITE_API_URL}/api/records/allrecords`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setRecords(allrecords.data)
@@ -23,7 +23,7 @@ const Records = () => {
 
   const deleteHandler = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/api/records/delete/${id}`, {
+      const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/records/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       if(response.status === 200) {
